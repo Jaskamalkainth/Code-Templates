@@ -1,3 +1,6 @@
+/*
+ * Suffix Array O(n * logn )
+ */
 const int MAXN = 3e6;
 int cnt[256], cls[2][MAXN], sa[2][MAXN], st[MAXN], rnk[MAXN];
 //sa[1][0] sa[1][1] ..... sa[1][n] where n=str.length() 

@@ -1,5 +1,13 @@
 /*
- * O(VE)
+ * Bellman Ford
+ * 
+ * works on negative edges ( time complexity reduced to O(VE) from O(ElogV) of Dijkstra )
+ *
+ * Shortest distance from Source vertex to every other vertex
+ *
+ * Detects Negative cycle exist in the graph if exist 
+ *
+ * O(VE) Complexity
  *
  */
 vector<int> d ;

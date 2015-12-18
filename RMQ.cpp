@@ -1,3 +1,14 @@
+/*
+ *
+ * Range Minimum Query 
+ *
+ * Preprocessing O(n * logn ) 
+ *
+ * Query Time O(1)
+ *
+ */
+
+
 const int MAX=1e6+7;
 const int LMAX=20;
 ll A[MAX];

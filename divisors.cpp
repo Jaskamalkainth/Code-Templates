@@ -1,3 +1,11 @@
+/*
+ *
+ * O(root(n)) 
+ *
+ * Function returns the list of divisors
+ *
+ */
+
 vector<ll> getDivisors(ll n)
 {
     set<ll> fcd;
