@@ -46,8 +46,9 @@ inline void union_set(int u,int v)
 }
 /* */
 /********* Bridge tree ********/
-inline void clear()
+inline void init_bridge_tree()
 {
+	make_set();
 	timer = 0;
 	for(int i = 0; i < maxn; i++)
 	{
@@ -86,8 +87,7 @@ inline void mark_bridges(int u)
 }
 inline void make_tree()
 {
-	make_set();
-	clear();
+	init_bridge_tree();
 	mark_bridges(0); // mark all the bridges
 	for(auto &i: bedge) // atmose n-1 bridge edges.
 	{
