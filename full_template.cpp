@@ -1,5 +1,8 @@
 /*
  *    J1K7_7
+ *
+ *    You can use my contents on a Creative Commons - Attribution 4.0 International - CC BY 4.0 License.  XD 
+ *    - JASKAMAL KAINTH
  */
 #include <iostream>
 #include <sstream>
@@ -11,6 +14,7 @@
 #include <stack>
 #include <set>
 #include <cstring>
+#include <cassert>
 #include <list>
 #include <map>
 #include <unordered_map>
