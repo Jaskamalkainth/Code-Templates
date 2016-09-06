@@ -50,21 +50,8 @@ typedef vector<long long>  vll;
 #define ff                 first
 #define m0(x) 		       memset(x,0,sizeof(x))
 
-const int mod=1e9+7;
-
-template<class T> inline T gcd(T a,T b){ll t;while(b){a=a%b;t=a;a=b;b=t;}return a;}
-template<class T> inline T lcm(T a,T b){return a/gcd(a,b)*b;}
-template<typename T, typename S> T expo(T b, S e, const T &m){if(e <= 1)return e == 0?1: b;\
-	return (e&1) == 0?expo((b*b)%m, e>>1, m): (b*expo((b*b)%m, e>>1, m))%m;}
-template<typename T> T modinv(T a) { return expo(a, mod-2, mod); }
-
-inline int nextint(){ int x; scanf("%d",&x); return x; }
-inline ll nextll(){ ll x; scanf("%lld",&x); return x; }
-
-const ll  mx_ll   = numeric_limits<ll> :: max();
-const int mx_int  = numeric_limits<int> :: max();
-
-const long double PI = (long double)(3.1415926535897932384626433832795);
+inline int nextint(){ int x; scanf("%d",&x);   return x; }
+inline ll  nextll() { ll  x; scanf("%lld",&x); return x; }
 
 #define gc getchar
 template <typename T> void scanint(T &x) {
@@ -72,6 +59,31 @@ template <typename T> void scanint(T &x) {
 	bool neg = false; if(c == '-') neg = true; x = 0; for(;c < 48 || c > 57;c=gc());
 	for(;c > 47 && c < 58;c=gc())	x = (x*10) + (c - 48); if(neg)	x = -x;
 }
+// variadics
+template<typename T >T min_ ( T a , T b ) { return a > b ? b : a ; }
+template < typename T ,  typename... Ts > T min_( T first , Ts... last ){ return  min_(first, min_(last...)); }
+
+// lambda exp auto  square = [](int inp) { return inp * inp; } ;
+
+template<class T, class S> std::ostream& operator<<(std::ostream &os, const std::pair<T, S> &t) {
+	os<<"("<<t.first<<", "<<t.second<<")";
+	return os;
+}
+template<typename T> ostream& operator<< (ostream& out, const vector<T>& v) {
+    out << "["; size_t last = v.size() - 1; for(size_t i = 0; i < v.size(); ++i) {
+    out << v[i]; if (i != last) out << ", "; } out << "]"; return out;
+}
+
+ll pwr(ll base, ll p, ll mod){
+ll ans = 1; while(p) { if(p&1) ans=(ans*base)%mod; base=(base*base)%mod; p/=2; } return ans;
+}
+ll gcd(ll a, ll b) {  return b == 0 ? a : gcd(b,a%b); }
+ll lcm(ll a, ll b) {  return a*(b/gcd(a,b)); }
+
+const long double PI = (long double)(3.1415926535897932384626433832795);
+const ll  mx_ll   = numeric_limits<ll> :: max();
+const int mx_int  = numeric_limits<int> :: max();
+const int mod = 1e9+7;
 
 int main()
 {
