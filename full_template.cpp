@@ -36,19 +36,19 @@ typedef pair<int,int>      pii;
 typedef pair<ll,ll>        pll;
 typedef vector<int>        vi;
 typedef vector<long long>  vll;
-#define left(x) 		   (x << 1)
-#define right(x) 		   (x << 1) + 1
-#define mid(l, r) 	       ((l + r) >> 1)
+#define left(x)		   (x << 1)
+#define right(x) 	   (x << 1) + 1
+#define mid(l, r) 	   ((l + r) >> 1)
 #define mp                 make_pair
 #define pb                 push_back
 #define all(a)             a.begin(),a.end()
-#define debug(x)	       {cerr <<#x<<" = " <<x<<"\n"; }
+#define debug(x)	   {cerr <<#x<<" = " <<x<<"\n"; }
 #define debug2(x, y)       {cerr <<#x<<" = " <<x<<", "<<#y <<" = " <<y <<"\n";}
 #define debug3(x, y, z)    {cerr <<#x<<" = " <<x<<", "<<#y <<" = " <<y <<", "<<#z<<" = "<<z<<"\n";}
 #define debug4(x, y, z, w) {cerr <<#x<<" = " <<x<<", "<<#y <<" = " <<y <<", "<<#z<<" = "<<z<<", "<<#w << " = " <<w <<"\n";}
 #define ss                 second
 #define ff                 first
-#define m0(x) 		       memset(x,0,sizeof(x))
+#define m0(x) 		   memset(x,0,sizeof(x))
 
 inline int nextint(){ int x; scanf("%d",&x);   return x; }
 inline ll  nextll() { ll  x; scanf("%lld",&x); return x; }
