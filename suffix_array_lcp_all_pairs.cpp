@@ -6,10 +6,22 @@ const int MAXN = 1e5+6;
 // SA[i]  : Suffix array
 // lcp[i] : lcp array
 // GetLCP(i,j): lcp of any 2 suffixes.
+string s;
 int len;
 int iSA[MAXN], SA[MAXN];
 int cnt[MAXN], next_gen[MAXN], lcp[ MAXN ], LCP[MAXN][22]; //internal
 bool bh[MAXN], b2h[MAXN],m_arr[MAXN];
+
+inline void init_SA()
+{
+	for(int i = 0; i < MAXN; i++)
+	{
+		iSA[i] = SA[i] = cnt[i] = next_gen[i] = lcp[i] = 0;
+		bh[i] = b2h[i] = m_arr[i] = 0;
+		for(int j = 0; j < 22; j++)
+			LCP[i][j] = 0;
+	}
+}
 
 bool smaller_first_char(int a, int b){
 	return s[a] < s[b];
@@ -111,4 +123,5 @@ int GetLCP(int x, int y) {
  */
 //	SuffixSort(len);
 //	ConstructLCP();
+//	string s, int len; defined globally on top
 
