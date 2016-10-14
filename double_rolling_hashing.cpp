@@ -4,14 +4,45 @@ struct mypair
 	int l , r;  
 };
 mypair HashF[maxn], HashR[maxn];
-int prime[2],mod[2];
+ll prime[2],mod[2];
+const int nine_len = 1e9+1;
 int P0[maxn], P1[maxn];
+inline int check_prime(ll n)
+{
+	int flag = 0;
+	for(int i = 2; i * i < n; i++)
+		if(n % i == 0)
+			flag = 1;
+	if(flag)
+		return 0;
+	else
+		return 1;
+}
 inline void RollingHash_double()
 {
 	prime[0] = 31;
 	prime[1] = 37;
-	mod[0] = 999999937;
-	mod[1] = 999999929;
+	ll rand_mod1 = nine_len + rand() % nine_len;
+	ll rand_mod2 = nine_len + rand() % nine_len;
+	while(!check_prime(rand_mod1))
+	{
+		rand_mod1++;  
+	}
+	while(!check_prime(rand_mod2))
+	{
+		rand_mod2++;  
+	}
+
+	while(rand_mod1 == rand_mod2)
+	{
+		rand_mod1++;
+		while(!check_prime(rand_mod1))
+		{
+			rand_mod1++;  
+		}
+	}
+	mod[0] = rand_mod1;
+	mod[1] = rand_mod2;
 	P0[0] = P1[0] = 1;
 	for(int i = 1; i < maxn; i++)
 	{
@@ -23,7 +54,7 @@ inline void Construct(string s)
 {
 	int len = s.length();
 	HashF[0] = HashR[len+1] = {0,0};
-
+	
 	for(int i = 1; i <= len; i++)
 	{
 		HashF[i].l = (1ll * HashF[i-1].l * prime[0] + s[i-1] ) % mod[0];
