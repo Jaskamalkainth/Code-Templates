@@ -8,8 +8,7 @@ inline void ETF()
         etf[i] = i;
     for(int i = 2;i <= maxN; i++)
     {
-        if(!P[i])
-        {
+        if (!P[i]) {
             etf[i] -= (etf[i]/i);
 			for(int j = 2*i; j < maxN; j += i)
             {
