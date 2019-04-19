@@ -1,9 +1,3 @@
-/*
- *    J1K7_7
- *
- *    You can use my contents on a Creative Commons - Attribution 4.0 International - CC BY 4.0 License.  XD 
- *    - JASKAMAL KAINTH
- */
 #include <iostream>
 #include <sstream>
 #include <fstream>
@@ -50,20 +44,10 @@ typedef vector<long long>  vll;
 #define ff                 first
 #define m0(x) 		   memset(x,0,sizeof(x))
 
-inline int nextint(){ int x; scanf("%d",&x);   return x; }
-inline ll  nextll() { ll  x; scanf("%lld",&x); return x; }
-
-#define gc getchar
-template <typename T> void scanint(T &x) {
-	T c = gc(); while(((c < 48) || (c > 57)) && (c!='-')) c = gc();
-	bool neg = false; if(c == '-') neg = true; x = 0; for(;c < 48 || c > 57;c=gc());
-	for(;c > 47 && c < 58;c=gc())	x = (x*10) + (c - 48); if(neg)	x = -x;
-}
-// variadics
 template<typename T >T min_ ( T a , T b ) { return a > b ? b : a ; }
 template < typename T ,  typename... Ts > T min_( T first , Ts... last ){ return  min_(first, min_(last...)); }
-
-// lambda exp auto  square = [](int inp) { return inp * inp; } ;
+template<typename T >T max_ ( T a , T b ) { return a > b ? a : b ; }
+template < typename T ,  typename... Ts > T max_( T first , Ts... last ){ return  max_(first, min_(last...)); }
 
 template<class T, class S> std::ostream& operator<<(std::ostream &os, const std::pair<T, S> &t) {
 	os<<"("<<t.first<<", "<<t.second<<")";
@@ -88,9 +72,9 @@ const int mod = 1e9+7;
 int main()
 {
     ios_base::sync_with_stdio(false); cin.tie(0);
-#ifndef __APPLE__
-    freopen("  .in", "rb", stdin);
-    freopen("  .out", "wb", stdout);
+#ifdef __APPLE__
+    freopen("test.in", "rb", stdin);
+    //freopen("  .out", "wb", stdout);
 #endif
 
 
